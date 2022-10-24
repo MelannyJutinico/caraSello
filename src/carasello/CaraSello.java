@@ -14,27 +14,27 @@ import java.util.Scanner;
  */
 public class CaraSello {
     
-    public String juegoCaraSello(){
+    public int juegoCaraSello(){
         Random rand = new Random();
         int tirarMoneda = Math.abs(rand.nextInt()) % 2;
-        if (tirarMoneda == 1) {
-            return "Salio cara";
-        }else{
-            return "Salio sello";
-        }
         
-        
+        return tirarMoneda;
     }
     
     
     
     public static void main(String[] args) {
         CaraSello c1 = new CaraSello();
-        System.err.println(c1.juegoCaraSello());
+        int juego = c1.juegoCaraSello();
         Scanner sc = new Scanner(System.in);
         int opcion = sc.nextInt();
         
-        System.out.println(opcion);
+        if (c1.juegoCaraSello() == opcion) {
+             System.out.println("Ganaste");
+        }else if(c1.juegoCaraSello() != opcion){
+            System.out.println("Perdiste");
+        }
+        
     }
     
 }
