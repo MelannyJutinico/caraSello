@@ -30,12 +30,13 @@ public class CaraSello {
             System.out.println(juego);
             Scanner sc = new Scanner(System.in);
             int opcion = sc.nextInt();
-            
+            System.out.println("Cuanto quieres apostar?");
+            int apuesta = sc.nextInt();
             
             if (juego == opcion) {
-                System.out.println("Ganaste");
+                System.out.println("Ganaste: "+apuesta);
             } else if (juego != opcion) {
-                System.out.println("Perdiste");
+                System.out.println("Perdiste: "+apuesta);
             }
             System.out.println("Jugar nuevamente? si/no");
             jugarNuevamente = sc.next();
