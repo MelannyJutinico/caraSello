@@ -22,21 +22,25 @@ public class CaraSello {
     }
 
     public static void main(String[] args) {
-        CaraSello c1 = new CaraSello();
-        int juego = c1.juegoCaraSello();
-        System.out.println(juego);
-        Scanner sc = new Scanner(System.in);
-        int opcion = sc.nextInt();
         String jugarNuevamente = "si";
+        
         do {
+            CaraSello c1 = new CaraSello();
+            int juego = c1.juegoCaraSello();
+            System.out.println(juego);
+            Scanner sc = new Scanner(System.in);
+            int opcion = sc.nextInt();
+            
+            
             if (juego == opcion) {
                 System.out.println("Ganaste");
             } else if (juego != opcion) {
                 System.out.println("Perdiste");
             }
+            System.out.println("Jugar nuevamente? si/no");
             jugarNuevamente = sc.next();
 
-        } while (jugarNuevamente.equals ("si"));
+        } while (jugarNuevamente.equals("si"));
     }
 
 }
