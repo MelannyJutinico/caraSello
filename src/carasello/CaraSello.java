@@ -26,6 +26,7 @@ public class CaraSello {
         float saldoTotal = 0;
         int partida = 0;
         do {
+            partida++;
             CaraSello c1 = new CaraSello();
             int juego = c1.juegoCaraSello();
             System.out.println(juego);
@@ -45,7 +46,7 @@ public class CaraSello {
             jugarNuevamente = sc.next();
 
         } while (jugarNuevamente.equals("si"));
-        
+        System.out.println("Total de veces jugado "+partida);
         System.out.println("total ganado " +saldoTotal );
     }
 
