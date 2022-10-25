@@ -23,9 +23,9 @@ public class CaraSello {
 
     public static void main(String[] args) {
         String jugarNuevamente = "si";
-        float totalApuesta = 0;
+        float saldoTotal = 0;
+        int partida = 0;
         do {
-            totalApuesta++;
             CaraSello c1 = new CaraSello();
             int juego = c1.juegoCaraSello();
             System.out.println(juego);
@@ -35,16 +35,18 @@ public class CaraSello {
             float apuesta = sc.nextInt();
             
             if (juego == opcion) {
+                saldoTotal = saldoTotal + apuesta;
                 System.out.println("Ganaste: "+apuesta);
             } else if (juego != opcion) {
+                saldoTotal = saldoTotal - apuesta;
                 System.out.println("Perdiste: "+apuesta);
             }
-            
             System.out.println("Jugar nuevamente? si/no");
             jugarNuevamente = sc.next();
 
         } while (jugarNuevamente.equals("si"));
-        System.out.println("total ganado "+totalApuesta );
+        
+        System.out.println("total ganado " +saldoTotal );
     }
 
 }
